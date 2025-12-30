@@ -1,0 +1,128 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purulia Darshan - Exploring the Beauty of West Bengal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+
+    </head>
+<body class="bg-gray-50 font-sans">
+
+<a href="https://wa.me/917076111493" class="wa-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+
+    <!-- Header -->
+    <header class="bg-green-700 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-3xl font-bold">Purulia Darshan</h1>
+                    <p class="text-green-200">Discover the Unexplored Beauty of West Bengal</p>
+                </div>
+                <nav>
+                    <ul class="flex space-x-6">
+                        <li><a href="index.html" class="nav-link hover:text-green-200 active" data-page="home">Home</a></li>
+                        <li><a href="about.html" class="nav-link hover:text-green-200" data-page="about">About</a></li>
+                        <li><a href="places.html" class="nav-link hover:text-green-200" data-page="places">Places</a></li>
+                        <li><a href="festivals.html" class="nav-link hover:text-green-200" data-page="festivals">Festivals</a></li>
+                        <li><a href="gallery.html" class="nav-link hover:text-green-200" data-page="gallery">Gallery</a></li>
+                        <li><a href="contact.html" class="nav-link hover:text-green-200" data-page="contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+  
+
+ <!-- Contact Page -->
+<div id="contact" class="page">
+    <div class="mb-8">
+        <h2 class="text-3xl font-bold text-gray-800 mb-2 text-center">Contact & Booking</h2>
+        <p class="text-gray-600 text-center">Get travel information or book your Purulia tour package</p>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-lg p-8 max-w-3xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Booking Form</h3>
+                <!-- ✅ id="contactForm" যোগ করা হলো -->
+                <form id="contactForm">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2" for="name">Full Name</label>
+                        <input type="text" id="name" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2" for="email">Email</label>
+                        <input type="email" id="email" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2" for="phone">Phone</label>
+                        <input type="tel" id="phone" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2" for="tour">Tour Package</label>
+                        <select id="tour" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <option>Select a package</option>
+                            <option>2 Days Ayodhya Hills Tour</option>
+                            <option>3 Days Purulia Heritage Tour</option>
+                            <option>5 Day Complete Purulia Experience</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg font-medium mt-4">
+                        Book Now
+                    </button>
+                </form>
+                <!-- ✅ success/error message দেখানোর জায়গা -->
+                <p id="formMessage" class="mt-4 text-green-700"></p>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Contact Information</h3>
+                <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i> Purulia Tourist House, Kotshila, Purulia - 723213</p>
+                <p class="text-gray-600 mb-4"><i class="fas fa-phone mr-2"></i> +91 70761 11493</p>
+                <p class="text-gray-600 mb-4"><i class="fas fa-envelope mr-2"></i> somenmahato2004@gmail.com</p>
+                <p class="text-gray-600"><i class="fas fa-clock mr-2"></i> Open: 10AM - 5PM (Mon-Sat)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Purulia Darshan</h3>
+                    <p class="text-gray-400">Showcasing the natural beauty, cultural heritage, and tourist attractions of Purulia, West Bengal.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://www.facebook.com/share/17XRtWrrUk/" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/purulia565?igsh=MTE2c25yYW9qbHBhaw==" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Photo Gallery</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Tourist Attractions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cultural Events</a></li>
+                    </ul>
+                </div>
+               <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <p class="text-gray-400 mb-2"><a href="https://www.google.com/maps?q=Purulia,West+Bengal,India"><i class="fas fa-map-marker-alt mr-2"></i> Purulia, West Bengal, India</p></a>
+                    <p class="text-gray-400 mb-2"><a href="tel:+917076111493"><i class="fas fa-phone mr-2"></i> +91 7076111493</p></a>
+                    <p class="text-gray-400"> <a href="mailto:somenmahato2004@gmail.com" ><i class="fas fa-envelope mr-2"></i> somenmahato2004@gmail.com</p></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>© 2023 Purulia Darshan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
