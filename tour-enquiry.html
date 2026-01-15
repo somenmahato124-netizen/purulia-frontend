@@ -170,9 +170,10 @@
         <label class="block text-sm font-semibold mb-1">
           Full Name
         </label>
-        <input type="text" required
-          placeholder="Enter your full name"
-          class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-400">
+       <input type="text" name="name" required
+  placeholder="Enter your full name"
+  class="w-full border rounded-lg px-4 py-2">
+
       </div>
 
       <!-- PHONE -->
@@ -180,9 +181,10 @@
         <label class="block text-sm font-semibold mb-1">
           Phone / WhatsApp Number
         </label>
-        <input type="tel" required
-          placeholder="Enter mobile number"
-          class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-400">
+        <input type="tel" name="phone" required
+  placeholder="Enter mobile number"
+  class="w-full border rounded-lg px-4 py-2">
+
       </div>
 
       <!-- EMAIL -->
@@ -190,9 +192,10 @@
         <label class="block text-sm font-semibold mb-1">
           Email (optional)
         </label>
-        <input type="email"
-          placeholder="Enter email address"
-          class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-400">
+        <input type="email" name="email"
+  placeholder="Enter email address"
+  class="w-full border rounded-lg px-4 py-2">
+
       </div>
 
       <!-- TOUR PACKAGE -->
@@ -200,8 +203,9 @@
         <label class="block text-sm font-semibold mb-1">
           Tour Package
         </label>
-        <select required
-          class="w-full border rounded-lg px-4 py-2 bg-white focus:ring-2 focus:ring-green-400">
+        <select name="tourPackage" required
+  class="w-full border rounded-lg px-4 py-2 bg-white">
+
           <option value="">-- Select Tour Package --</option>
           <option>Ajodhya Hills Complete Circuit Tour</option>
           <option>Baranti Side Complete Nature Tour</option>
@@ -266,8 +270,9 @@
         <label class="block text-sm font-semibold mb-1">
           Preferred Travel Date
         </label>
-        <input type="date"
-          class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-400">
+        <input type="date" name="travelDate"
+  class="w-full border rounded-lg px-4 py-2">
+
       </div>
 
       <!-- PEOPLE -->
@@ -275,9 +280,10 @@
         <label class="block text-sm font-semibold mb-1">
           Number of Travelers
         </label>
-        <input type="number" min="1"
-          placeholder="Ex: 2, 5, 20"
-          class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-400">
+        <input type="number" name="persons" min="2"
+  placeholder="Ex: 2, 5, 20"
+  class="w-full border rounded-lg px-4 py-2">
+
       </div>
 
       <!-- MESSAGE -->
@@ -285,9 +291,10 @@
         <label class="block text-sm font-semibold mb-1">
           Message / Requirement
         </label>
-        <textarea rows="4"
-          placeholder="Tell us your requirements, budget, hotel preference etc."
-          class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-400"></textarea>
+        <textarea name="message" rows="4"
+  placeholder="Tell us your requirements..."
+  class="w-full border rounded-lg px-4 py-2"></textarea>
+
       </div>
 
       <!-- SUBMIT -->
@@ -390,6 +397,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>
+
+
+
+
+<script>
+document.getElementById("enquiryForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+
+  const data = {
+    name: form.name.value,
+    phone: form.phone.value,
+    email: form.email.value,
+    tourPackage: form.tourPackage.value,
+    travelDate: form.travelDate.value,
+    travelers: form.persons.value,
+    message: form.message.value
+  };
+
+  try {
+    const res = await fetch(
+      "https://purulia-backend-1.onrender.com/api/enquiry",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      }
+    );
+
+    const result = await res.json();
+
+    if (res.ok) {
+      alert("Enquiry sent successfully 📞");
+      form.reset();
+    } else {
+      alert(result.error || "Something went wrong!");
+    }
+  } catch (err) {
+    alert("Server error. Try later.");
+  }
+});
+</script>
+
 
 
 </body>

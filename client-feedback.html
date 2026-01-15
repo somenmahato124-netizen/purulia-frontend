@@ -160,16 +160,18 @@
       <!-- NAME -->
       <div class="mb-4">
         <label class="block text-sm font-semibold mb-1">Your Name</label>
-        <input type="text" required
-          placeholder="Enter your name"
-          class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-pink-400">
+        <input type="text" name="name" required
+  placeholder="Enter your name"
+  class="w-full border rounded-lg px-4 py-2">
+
       </div>
 
       <!-- TOUR PACKAGE DROPDOWN -->
       <div class="mb-4">
         <label class="block text-sm font-semibold mb-1">Tour Package</label>
-        <select required
-          class="w-full border rounded-lg px-4 py-2 bg-white focus:ring-2 focus:ring-pink-400">
+        <select name="tourPackage" required 
+        class="w-full border rounded-lg px-4 py-2 bg-white">
+
           <option value="">-- Select Tour Package --</option>
          <option>Ajodhya Hills Complete Circuit Tour</option>
           <option>Baranti Side Complete Nature Tour</option>
@@ -241,7 +243,8 @@
           <i class="fa-regular fa-star text-yellow-400" data-value="5"></i>
         </div>
 
-        <input type="hidden" id="rating" value="0">
+        <input type="hidden" id="rating" name="rating" value="0">
+
         <p class="text-xs text-gray-500 mt-1">
           Selected Rating: <span id="ratingValue">0</span> / 5
         </p>
@@ -250,9 +253,10 @@
       <!-- FEEDBACK -->
       <div class="mb-6">
         <label class="block text-sm font-semibold mb-1">Your Feedback</label>
-        <textarea rows="4" required
-          placeholder="Tell us about your experience..."
-          class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-pink-400"></textarea>
+       <textarea name="message" rows="4" required
+  placeholder="Tell us about your experience..."
+  class="w-full border rounded-lg px-4 py-2"></textarea>
+
       </div>
 
       <!-- SUBMIT -->
@@ -380,6 +384,53 @@ const stars = document.querySelectorAll('#stars i');
   });
 
 </script>
+
+
+
+<script>
+document.getElementById("feedbackForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+
+  const data = {
+    name: form.name.value,
+    tourPackage: form.tourPackage.value,
+    rating: Number(form.rating.value),
+    feedback: form.message.value
+  };
+
+  if (!data.rating || data.rating < 1) {
+    alert("Please select a rating");
+    return;
+  }
+
+  try {
+    const res = await fetch(
+      "https://purulia-backend-1.onrender.com/api/feedback",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      }
+    );
+
+    const result = await res.json();
+
+    if (res.ok) {
+      alert("Thank you for your feedback ❤️");
+      form.reset();
+      document.getElementById("ratingValue").textContent = "0";
+    } else {
+      alert(result.error || "Something went wrong!");
+    }
+  } catch (err) {
+    alert("Server error. Try again later.");
+  }
+});
+</script>
+
+
 
 
 <!-- STAR SCRIPT -->

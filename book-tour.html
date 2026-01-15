@@ -1,5 +1,5 @@
 
-      <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -129,8 +129,8 @@
 <section class="max-w-4xl mx-auto px-4 py-10">
   <h2 class="text-3xl font-bold mb-6 text-center">Book Your Tour</h2>
 
-  <form action="#" method="post"
-        class="bg-white p-8 rounded-xl shadow-md space-y-6">
+  <form id="enquiryForm" class="bg-white p-8 rounded-xl shadow-md space-y-6">
+
 
     <!-- Name -->
     <div>
@@ -301,6 +301,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>
+
+
+
+<script>
+document.getElementById("enquiryForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+
+  const data = {
+    name: form.name.value,
+    phone: form.phone.value,
+    email: form.email.value,
+    tourPackage: form.package.value,
+    travelDate: form.date.value,
+    travelers: Number(form.persons.value),
+    pickup: form.pickup.value, 
+    message: form.message.value
+  };
+
+  try {
+    const res = await fetch(
+      "https://purulia-backend-1.onrender.com/api/enquiry",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      }
+    );
+
+    const result = await res.json();
+
+    if (res.ok) {
+      alert("Your enquiry has been submitted successfully! ✅");
+      form.reset();
+    } else {
+      alert(result.error || "Something went wrong!");
+    }
+  } catch (err) {
+    alert("Server error. Please try later.");
+  }
+});
+</script>
+
+
+
 
     </body>
     </html>
