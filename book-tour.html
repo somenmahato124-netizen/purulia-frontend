@@ -384,7 +384,7 @@ document.getElementById("enquiryForm").addEventListener("submit", async (e) => {
     const result = await res.json();
 
     if (res.ok) {
-      alert("Your enquiry has been submitted successfully! ✅");
+      alert("Your Booking Request has been submitted successfully! ✅");
       form.reset();
     } else {
       alert(result.error || "Something went wrong!");
