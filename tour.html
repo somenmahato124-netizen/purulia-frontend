@@ -182,7 +182,7 @@
               <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Best Seller</span>
               <p class="text-xl font-bold text-black mt-1">₹7,999 <span class="text-sm font-normal">/ person</span></p>
             </div>
-            <a href="book-tour.html?package=Ajodhya%20Hills%20Complete%20Circuit%20Tour"
+            <a href="book-tour.html"
                class="block text-center bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-xl transition">
               Book Now
             </a>
@@ -232,7 +232,7 @@
               <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Popular Choice</span>
               <p class="text-xl font-bold text-black mt-1">₹6,499 <span class="text-sm font-normal">/ person</span></p>
             </div>
-            <a href="book-tour.html?package=Baranti%20Side%20Complete%20Nature%20Tour"
+            <a href="book-tour.html"
                class="block text-center bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-xl transition">
               Book Now
             </a>
@@ -283,7 +283,7 @@
               <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Best Seller</span>
               <p class="text-xl font-bold text-black mt-1">₹8,499 <span class="text-sm font-normal">/ person</span></p>
             </div>
-            <a href="book-tour.html?package=Ajodhya%20Hills%20%26%20Baranti%20Combo%20Tour"
+            <a href="book-tour.html"
                class="block text-center bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-xl transition">
               Book Now
             </a>
@@ -321,7 +321,7 @@
 
           <div class="p-5 pt-2">
             <p class="text-xl font-bold mb-4">₹7,999 <span class="text-sm font-normal">/ person</span></p>
-            <a href="book-tour.html?package=Purulia%20Hills%20Explorer%20Tour"
+            <a href="book-tour.html"
                class="block text-center bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-xl transition">
               Book Now
             </a>
@@ -358,7 +358,7 @@
 
           <div class="p-5 pt-2">
             <p class="text-xl font-bold mb-4">₹5,999 <span class="text-sm font-normal">/ person</span></p>
-            <a href="book-tour.html?package=Purulia%20Waterfalls%20Special%20Tour"
+            <a href="book-tour.html"
                class="block text-center bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-xl transition">
               Book Now
             </a>
@@ -395,7 +395,7 @@
 
           <div class="p-5 pt-2">
             <p class="text-xl font-bold mb-4">₹6,499 <span class="text-sm font-normal">/ person</span></p>
-            <a href="book-tour.html?package=Purulia%20Lake%20%26%20Dam%20Tour"
+            <a href="book-tour.html"
                class="block text-center bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-xl transition">
               Book Now
             </a>
@@ -427,7 +427,7 @@
 
           <div class="p-5 pt-2">
             <p class="text-xl font-bold mb-4">₹8,999 <span class="text-sm font-normal">/ couple</span></p>
-            <a href="book-tour.html?package=Purulia%20Honeymoon%20Escape"
+            <a href="book-tour.html"
                class="block text-center bg-pink-400 hover:bg-pink-500 text-black py-3 rounded-xl font-semibold transition">
               Book Now
             </a>
@@ -460,7 +460,7 @@
 
           <div class="p-5 pt-2">
             <p class="text-xl font-bold mb-4">Price on Request</p>
-            <a href="book-tour.html?package=Educational%20Group%20Tour"
+            <a href="book-tour.html"
                class="block w-full text-center bg-black hover:bg-gray-800 text-white py-3 rounded-xl font-semibold transition">
               Contact for Group Tour
             </a>
@@ -596,7 +596,7 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- CLEAN & UNIFIED SCRIPTS -->
   <script>
     function openModal() {
       document.getElementById("customModal").classList.remove("hidden");
@@ -631,78 +631,32 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
+      // 1. Mobile Menu Toggle
       const menuBtn = document.getElementById("menuBtn");
       const mobileMenu = document.getElementById("mobileMenu");
-
       if (menuBtn && mobileMenu) {
         menuBtn.addEventListener("click", () => {
           mobileMenu.classList.toggle("hidden");
         });
       }
+
+      // 2. Auto-Detect Package Name on Book Now Click and Redirect with Hash/Query
+      document.querySelectorAll('a[href*="book-tour"]').forEach(btn => {
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          const card = this.closest(".bg-white");
+          const titleEl = card ? card.querySelector("h4") : null;
+          const pkgName = titleEl ? titleEl.innerText.trim() : "Ajodhya Hills Complete Circuit Tour";
+
+          // Save to browser memory
+          localStorage.setItem("puruliaSelectedPackage", pkgName);
+          
+          // Redirect to booking page with hash and query
+          window.location.href = `book-tour.html?package=${encodeURIComponent(pkgName)}#${encodeURIComponent(pkgName)}`;
+        });
+      });
     });
   </script>
-
-  <!-- tour.html এর একদম নিচে </body> এর আগে এইটুকু বসান -->
-<script>
-  function openModal() {
-    document.getElementById("customModal").classList.remove("hidden");
-    document.getElementById("customModal").classList.add("flex");
-  }
-
-  function closeModal() {
-    document.getElementById("customModal").classList.add("hidden");
-    document.getElementById("customModal").classList.remove("flex");
-  }
-
-  function sendWhatsApp() {
-    const duration = document.getElementById("duration").value;
-    const persons = document.getElementById("persons").value;
-    const budget = document.getElementById("budget").value;
-    const phone = document.getElementById("phone").value;
-
-    let places = [];
-    document.querySelectorAll(".place:checked").forEach(p => {
-      places.push(p.value);
-    });
-
-    let message =
-      `Custom Purulia Tour Enquiry:%0A` +
-      `Duration: ${duration}%0A` +
-      `Places: ${places.join(", ")}%0A` +
-      `Persons: ${persons}%0A` +
-      `Budget: ${budget}%0A` +
-      `Client Contact: ${phone}`;
-
-    window.open(`https://wa.me/917076111493?text=${message}`, "_blank");
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    // 1. Mobile Menu Toggle
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
-    if (menuBtn && mobileMenu) {
-      menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-    }
-
-    // 2. AUTO-DETECT WHICH PACKAGE CARD WAS CLICKED
-    document.querySelectorAll('a[href*="book-tour"]').forEach(button => {
-      button.addEventListener("click", function () {
-        // বাটনের কার্ডের ভেতর থেকে <h4> ট্যাগের প্যাকেজের নামটি খুঁজে নেওয়া
-        const card = this.closest(".bg-white");
-        if (card) {
-          const titleEl = card.querySelector("h4");
-          if (titleEl) {
-            const pkgName = titleEl.innerText.trim();
-            // ব্রাউজারের মেমোরিতে সাথে সাথে সেভ করে রাখা
-            localStorage.setItem("puruliaSelectedPackage", pkgName);
-          }
-        }
-      });
-    });
-  });
-</script>
 
 </body>
 </html>
