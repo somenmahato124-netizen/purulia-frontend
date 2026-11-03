@@ -642,5 +642,67 @@
     });
   </script>
 
+  <!-- tour.html এর একদম নিচে </body> এর আগে এইটুকু বসান -->
+<script>
+  function openModal() {
+    document.getElementById("customModal").classList.remove("hidden");
+    document.getElementById("customModal").classList.add("flex");
+  }
+
+  function closeModal() {
+    document.getElementById("customModal").classList.add("hidden");
+    document.getElementById("customModal").classList.remove("flex");
+  }
+
+  function sendWhatsApp() {
+    const duration = document.getElementById("duration").value;
+    const persons = document.getElementById("persons").value;
+    const budget = document.getElementById("budget").value;
+    const phone = document.getElementById("phone").value;
+
+    let places = [];
+    document.querySelectorAll(".place:checked").forEach(p => {
+      places.push(p.value);
+    });
+
+    let message =
+      `Custom Purulia Tour Enquiry:%0A` +
+      `Duration: ${duration}%0A` +
+      `Places: ${places.join(", ")}%0A` +
+      `Persons: ${persons}%0A` +
+      `Budget: ${budget}%0A` +
+      `Client Contact: ${phone}`;
+
+    window.open(`https://wa.me/917076111493?text=${message}`, "_blank");
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // 1. Mobile Menu Toggle
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    }
+
+    // 2. AUTO-DETECT WHICH PACKAGE CARD WAS CLICKED
+    document.querySelectorAll('a[href*="book-tour"]').forEach(button => {
+      button.addEventListener("click", function () {
+        // বাটনের কার্ডের ভেতর থেকে <h4> ট্যাগের প্যাকেজের নামটি খুঁজে নেওয়া
+        const card = this.closest(".bg-white");
+        if (card) {
+          const titleEl = card.querySelector("h4");
+          if (titleEl) {
+            const pkgName = titleEl.innerText.trim();
+            // ব্রাউজারের মেমোরিতে সাথে সাথে সেভ করে রাখা
+            localStorage.setItem("puruliaSelectedPackage", pkgName);
+          }
+        }
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
