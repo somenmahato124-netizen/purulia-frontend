@@ -453,5 +453,145 @@
     });
   </script>
 
+  <!-- book-tour.html এর নিচে </body> এর আগে এই স্ক্রিপ্টটি বসান -->
+<script>
+  const PACKAGES_MAP = {
+    "Ajodhya Hills Complete Circuit Tour": { price: 7999, unit: "person", duration: "3D / 2N" },
+    "Baranti Side Complete Nature Tour": { price: 6499, unit: "person", duration: "3D / 2N" },
+    "Ajodhya Hills & Baranti Combo Tour": { price: 8499, unit: "person", duration: "3D / 2N" },
+    "Purulia Hills Explorer Tour": { price: 7999, unit: "person", duration: "3D / 2N" },
+    "Purulia Waterfalls Special Tour": { price: 5999, unit: "person", duration: "2D / 1N" },
+    "Purulia Lake & Dam Tour": { price: 6499, unit: "person", duration: "2D / 1N" },
+    "Purulia Honeymoon Escape": { price: 8999, unit: "couple", duration: "3D / 2N" },
+    "Educational Group Tour": { price: 0, unit: "group", duration: "Custom" },
+    "Custom Private Purulia Tour": { price: 0, unit: "custom", duration: "Flexible" }
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    /* 1. Mobile Menu Toggle */
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+    }
+
+    /* 2. Set Minimum Travel Date to Today */
+    const dateInput = document.getElementById("dateInput");
+    if (dateInput) {
+      const today = new Date().toISOString().split("T")[0];
+      dateInput.setAttribute("min", today);
+    }
+
+    /* 3. Read Package from Memory (localStorage) OR URL */
+    const params = new URLSearchParams(window.location.search);
+    const urlPkg = params.get("package");
+    const savedPkg = localStorage.getItem("puruliaSelectedPackage");
+
+    // প্রথমে মেমোরিতে সেভ হওয়া নাম বা URL-এর নাম নেবে
+    let selectedPkg = (urlPkg || savedPkg || "Ajodhya Hills Complete Circuit Tour").trim();
+
+    // যদি ইউজার আলাদা ডিটেইলস পেজ (যেমন purulia-waterfalls-special.html) থেকেও আসে, সেটাও চিনে নেবে
+    if (!urlPkg && !savedPkg && document.referrer) {
+      const ref = document.referrer.toLowerCase();
+      if (ref.includes("baranti-side")) selectedPkg = "Baranti Side Complete Nature Tour";
+      else if (ref.includes("ajodhya-baranti")) selectedPkg = "Ajodhya Hills & Baranti Combo Tour";
+      else if (ref.includes("hills-explorer")) selectedPkg = "Purulia Hills Explorer Tour";
+      else if (ref.includes("waterfalls")) selectedPkg = "Purulia Waterfalls Special Tour";
+      else if (ref.includes("lake-dam")) selectedPkg = "Purulia Lake & Dam Tour";
+      else if (ref.includes("honeymoon")) selectedPkg = "Purulia Honeymoon Escape";
+      else if (ref.includes("educational")) selectedPkg = "Educational Group Tour";
+    }
+
+    const pkgInfo = PACKAGES_MAP[selectedPkg] || { price: 6499, unit: "person", duration: "3D / 2N" };
+
+    // UI আপডেট করা
+    const packageInput = document.getElementById("packageInput");
+    const summaryPackageName = document.getElementById("summaryPackageName");
+    const summaryDuration = document.getElementById("summaryDuration");
+    const summaryBasePrice = document.getElementById("summaryBasePrice");
+    const summaryTravelers = document.getElementById("summaryTravelers");
+    const summaryTotalPrice = document.getElementById("summaryTotalPrice");
+    const personsInput = document.getElementById("personsInput");
+
+    packageInput.value = selectedPkg;
+    summaryPackageName.textContent = selectedPkg;
+    summaryDuration.textContent = pkgInfo.duration;
+
+    function updatePriceCalculation() {
+      const count = Math.max(1, Number(personsInput.value) || 1);
+      summaryTravelers.textContent = `${count} ${count === 1 ? "Person" : "Persons"}`;
+
+      if (pkgInfo.price === 0) {
+        summaryBasePrice.textContent = "Custom Quote";
+        summaryTotalPrice.textContent = "Price on Request";
+      } else if (pkgInfo.unit === "couple") {
+        summaryBasePrice.textContent = `₹${pkgInfo.price.toLocaleString("en-IN")} / couple`;
+        const couplesCount = Math.ceil(count / 2);
+        const total = couplesCount * pkgInfo.price;
+        summaryTotalPrice.textContent = `₹${total.toLocaleString("en-IN")}`;
+      } else {
+        summaryBasePrice.textContent = `₹${pkgInfo.price.toLocaleString("en-IN")} / person`;
+        const total = count * pkgInfo.price;
+        summaryTotalPrice.textContent = `₹${total.toLocaleString("en-IN")}`;
+      }
+    }
+
+    personsInput.addEventListener("input", updatePriceCalculation);
+    updatePriceCalculation();
+  });
+
+  /* 4. Submit Form to Backend */
+  document.getElementById("enquiryForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const submitBtn = document.getElementById("submitBtn");
+    const originalBtnHTML = submitBtn.innerHTML;
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin mr-2"></i> Processing...`;
+
+    const data = {
+      name: form.name.value.trim(),
+      phone: form.phone.value.trim(),
+      email: form.email.value.trim(),
+      tourPackage: form.package.value,
+      travelDate: form.date.value,
+      travelers: Number(form.persons.value),
+      pickup: form.pickup.value.trim(),
+      message: form.message.value.trim()
+    };
+
+    try {
+      const res = await fetch(
+        "https://purulia-backend-1.onrender.com/api/enquiry",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        }
+      );
+
+      const result = await res.json();
+
+      if (res.ok) {
+        alert(`Thank you ${data.name}! Your booking request for "${data.tourPackage}" has been submitted successfully. ✅`);
+        const currentPkg = form.package.value;
+        form.reset();
+        form.package.value = currentPkg;
+        document.getElementById("personsInput").value = 2;
+        document.getElementById("personsInput").dispatchEvent(new Event("input"));
+      } else {
+        alert(result.error || "Something went wrong! Please try again.");
+      }
+    } catch (err) {
+      alert("Server error. Please check your connection or message us on WhatsApp.");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnHTML;
+    }
+  });
+</script>
+
 </body>
 </html>
