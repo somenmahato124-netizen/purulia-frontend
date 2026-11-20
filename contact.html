@@ -287,53 +287,81 @@
   </footer>
 
   <!-- JavaScript for Mobile Menu & WhatsApp Form Submission -->
-  <script>
-    // 1. Mobile Menu Toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
+ <script>
+  // ১. Mobile Menu Toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
 
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
 
-    // 2. Form Submission to WhatsApp
-    const contactForm = document.getElementById('contactForm');
-    const formMessage = document.getElementById('formMessage');
+  // ২. Form Submission to Google Sheet + Email + WhatsApp
+  const contactForm = document.getElementById('contactForm');
+  const formMessage = document.getElementById('formMessage');
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
 
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
+  // এখানে আপনার Google Apps Script Web App URL বসান
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyIMYITFPuO8GZnEadnDVPZHNTVxh7yLfQ8LtcpW-0HiHLg2rY-0nPVMvO3gX0H0JijIg/exec";
 
-      const name = document.getElementById('name').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const date = document.getElementById('date').value;
-      const guests = document.getElementById('guests').value;
-      const tour = document.getElementById('tour').value;
-      const message = document.getElementById('message').value.trim();
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
 
-      // WhatsApp Message Formatting
+    // বাটন ডিজেবল করে লোডিং দেখানো
+    const originalBtnHTML = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Saving Booking...`;
+    formMessage.textContent = "Saving your booking details...";
+    formMessage.className = "mt-3 text-sm font-medium text-blue-600 text-center";
+
+    const formData = {
+      name: document.getElementById('name').value.trim(),
+      phone: document.getElementById('phone').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      date: document.getElementById('date').value,
+      guests: document.getElementById('guests').value,
+      tour: document.getElementById('tour').value,
+      message: document.getElementById('message').value.trim()
+    };
+
+    try {
+      // Google Sheet ও ইমেইলে ডাটা পাঠানো
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors", // CORS এরর এড়ানোর জন্য
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      formMessage.textContent = "Booking saved! Redirecting to WhatsApp...";
+      formMessage.className = "mt-3 text-sm font-medium text-green-700 text-center";
+
+      // WhatsApp মেসেজ তৈরি ও রিডাইরেক্ট
       const whatsappNumber = "917076111493";
-      let text = `*New Tour Booking Request - Purulia Darshan*%0A%0A` +
-                 `*Name:* ${name}%0A` +
-                 `*Phone:* ${phone}%0A` +
-                 `*Email:* ${email || 'Not provided'}%0A` +
-                 `*Travel Date:* ${date}%0A` +
-                 `*Total Guests:* ${guests}%0A` +
-                 `*Package:* ${tour}%0A` +
-                 `*Notes:* ${message || 'None'}`;
+      const text = `*New Tour Booking Request - Purulia Darshan*%0A%0A` +
+                   `*Name:* ${formData.name}%0A` +
+                   `*Phone:* ${formData.phone}%0A` +
+                   `*Email:* ${formData.email || 'Not provided'}%0A` +
+                   `*Travel Date:* ${formData.date}%0A` +
+                   `*Total Guests:* ${formData.guests}%0A` +
+                   `*Package:* ${formData.tour}%0A` +
+                   `*Notes:* ${formData.message || 'None'}`;
 
-      formMessage.textContent = "Redirecting to WhatsApp to confirm your booking...";
-      
-      // Open WhatsApp
       window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
-      
-      // Reset form after 2 seconds
-      setTimeout(() => {
-        contactForm.reset();
-        formMessage.textContent = "Thank you! Your inquiry details have been prepared for WhatsApp.";
-      }, 2000);
-    });
-  </script>
+      contactForm.reset();
+
+    } catch (error) {
+      console.error("Error:", error);
+      formMessage.textContent = "Something went wrong! Please try contacting via WhatsApp directly.";
+      formMessage.className = "mt-3 text-sm font-medium text-red-600 text-center";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnHTML;
+    }
+  });
+</script>
 
 </body>
 </html>
