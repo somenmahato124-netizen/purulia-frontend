@@ -1,440 +1,447 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- SEO Title -->
-  <title>Tour Enquiry | Purulia Tour</title>
-
-  <!-- Basic SEO -->
+  <title>Client Feedback | Purulia Darshan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Purulia Darshan is your complete guide to Purulia tourism – hills, waterfalls, Chhau dance, culture, festivals and travel information of Purulia, West Bengal.">
-  <meta name="keywords" content="Purulia tourism, Purulia Darshan, Purulia places, Purulia travel guide, Chhau dance Purulia, Purulia hills, West Bengal tourism">
+  <meta name="description" content="Share your travel experience and review with Purulia Darshan – hills, waterfalls, Chhau dance, and custom Purulia tours.">
+  <meta name="keywords" content="Purulia tourism feedback, Purulia Darshan reviews, Purulia travel guide">
   <meta name="author" content="Purulia Darshan">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph / Facebook / WhatsApp -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://puruliadarshan.online/">
-  <meta property="og:title" content="Purulia Darshan | Explore Tourism & Culture of Purulia">
-  <meta property="og:description" content="Discover the unexplored beauty of Purulia – hills, waterfalls, culture, festivals and Chhau dance of West Bengal.">
+  <meta property="og:url" content="https://puruliadarshan.online/client-feedback.html">
+  <meta property="og:title" content="Client Feedback | Purulia Darshan">
+  <meta property="og:description" content="Read and share traveler experiences with Purulia Darshan.">
   <meta property="og:image" content="https://puruliadarshan.online/cover.jpg">
 
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Purulia Darshan | Explore Tourism of Purulia">
-  <meta name="twitter:description" content="Complete travel guide of Purulia – nature, culture, Chhau dance and tourist places.">
-  <meta name="twitter:image" content="https://puruliadarshan.online/favicon.png">
-
-  <!-- Local SEO -->
-  <meta name="geo.region" content="IN-WB">
-  <meta name="geo.placename" content="Purulia">
-  <meta name="geo.position" content="23.3300;86.3600">
-  <meta name="ICBM" content="23.3300, 86.3600">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://puruliadarshan.online/">
-
-  <!-- CSS FILES (ঠিক জায়গা) -->
+  <link rel="canonical" href="https://puruliadarshan.online/client-feedback.html">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-
-  <!-- Tailwind CSS -->
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
   <script src="https://cdn.tailwindcss.com"></script>
 
-
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TouristInformationCenter",
-  "name": "Purulia Darshan",
-  "url": "https://puruliadarshan.online",
-  "logo": "https://puruliadarshan.online/favicon.png",
-  "image": "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b29675cc-e0ac-4a29-a658-56f4ad419c6e.png",
-  "description": "Tourism and travel guide website of Purulia, West Bengal",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Purulia",
-    "addressRegion": "West Bengal",
-    "addressCountry": "IN"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+91-7076111493",
-    "contactType": "customer support",
-    "areaServed": "IN"
-  },
-  "sameAs": [
-    "https://www.facebook.com/share/17XRtWrrUk/",
-    "https://www.instagram.com/purulia565"
-  ]
-}
-</script>
-
+  <style>
+    html { scroll-behavior: smooth; }
+    .wa-float {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      width: 56px;
+      height: 56px;
+      background-color: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      z-index: 40;
+      transition: transform 0.25s ease;
+    }
+    .wa-float:hover { transform: scale(1.08); }
+    .wa-float img { width: 32px; height: 32px; }
+  </style>
 </head>
 
-<body class=" font-sans">
-    <!-- Header -->
-<header class="bg-green-700 text-white shadow-lg">
-  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+<body class="bg-gradient-to-br from-emerald-50 via-white to-green-50 font-sans text-gray-800 flex flex-col min-h-screen">
 
-    <div>
-      <h1 class="text-2xl md:text-3xl font-bold">Purulia Darshan</h1>
+  <!-- Sticky Header -->
+  <header class="bg-green-800 text-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3.5 flex justify-between items-center">
+      <div>
+        <a href="index.html" class="text-2xl md:text-3xl font-extrabold tracking-tight flex items-center gap-2">
+          <i class="fas fa-mountain text-emerald-300"></i>
+          <span>Purulia Darshan</span>
+        </a>
+        <p class="text-green-200 text-xs hidden sm:block">Discover the Unexplored Beauty of West Bengal</p>
+      </div>
 
-      <p class="text-green-200 text-sm hidden md:block">
-        Discover the Unexplored Beauty of West Bengal
-      </p>
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold">
+        <a href="index.html" class="hover:text-emerald-300 transition">Home</a>
+        <a href="about.html" class="hover:text-emerald-300 transition">About</a>
+        <a href="places.html" class="hover:text-emerald-300 transition">Places</a>
+        <a href="tour.html" class="hover:text-emerald-300 transition">Packages</a>
+        <a href="festivals.html" class="hover:text-emerald-300 transition">Festivals</a>
+        <a href="gallery.html" class="hover:text-emerald-300 transition">Gallery</a>
+        <a href="contact.html" class="hover:text-emerald-300 transition">Contact</a>
+        <a href="book-tour.html" class="bg-amber-400 hover:bg-amber-300 text-gray-900 font-bold px-4 py-2 rounded-lg shadow transition">
+          Book Tour
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Toggle -->
+      <button id="menuBtn" aria-label="Toggle Menu" class="md:hidden text-2xl p-1 focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
 
-    <!-- Desktop Menu -->
-    <nav class="hidden md:block">
-      <ul class="flex space-x-6">
-        <li><a href="index.html" class="hover:text-green-200">Home</a></li>
-        <li><a href="about.html" class="hover:text-green-200">About</a></li>
-        <li><a href="places.html" class="hover:text-green-200">Places</a></li>
-        <li><a href="festivals.html" class="hover:text-green-200">Festivals</a></li>
-        <li><a href="gallery.html" class="hover:text-green-200">Gallery</a></li>
-        <li><a href="contact.html" class="hover:text-green-200">Contact</a></li>
-      </ul>
-    </nav>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-green-900 px-4 pb-4 space-y-1 text-sm font-medium">
+      <a href="index.html" class="block py-2 border-b border-green-800">Home</a>
+      <a href="about.html" class="block py-2 border-b border-green-800">About</a>
+      <a href="places.html" class="block py-2 border-b border-green-800">Places</a>
+      <a href="tour.html" class="block py-2 border-b border-green-800">Packages</a>
+      <a href="festivals.html" class="block py-2 border-b border-green-800">Festivals</a>
+      <a href="gallery.html" class="block py-2 border-b border-green-800">Gallery</a>
+      <a href="contact.html" class="block py-2 border-b border-green-800">Contact</a>
+      <a href="book-tour.html" class="block py-2.5 mt-2 text-center bg-amber-400 text-gray-900 font-bold rounded-lg">Book Tour</a>
+    </div>
+  </header>
 
-    <!-- Mobile Button -->
-    <button id="menuBtn" class="md:hidden text-2xl">
-      <i class="fas fa-bars"></i>
-    </button>
-  </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" class="hidden md:hidden bg-green-800 px-4 pb-4">
-    <a href="index.html" class="block py-2">Home</a>
-    <a href="about.html" class="block py-2">About</a>
-    <a href="places.html" class="block py-2">Places</a>
-    <a href="festivals.html" class="block py-2">Festivals</a>
-    <a href="gallery.html" class="block py-2">Gallery</a>
-    <a href="contact.html" class="block py-2">Contact</a>
-  </div>
-</header>
-
-
-    <a href="https://wa.me/917076111493" class="wa-float" target="_blank">
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/917076111493" class="wa-float" target="_blank" rel="noopener" title="Chat on WhatsApp">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </a>
+  </a>
 
+  <!-- Hero Section -->
+  <section
+    class="relative text-white min-h-[48vh] flex items-center justify-center bg-cover bg-center"
+    style="background-image: url('images/seen_7.jpg');"
+  >
+    <div class="absolute inset-0 bg-gradient-to-b from-green-950/75 via-black/60 to-black/75"></div>
 
+    <div class="relative max-w-3xl mx-auto px-4 text-center py-12">
+      <span class="inline-block bg-emerald-500/30 border border-emerald-300/40 text-emerald-200 text-xs font-bold uppercase tracking-widest px-3.5 py-1 rounded-full mb-3">
+        Traveler Reviews
+      </span>
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">
+        Client Feedback
+      </h1>
+      <p class="mt-3 text-sm md:text-lg text-gray-200">
+        Share your experience with <span class="text-amber-300 font-semibold">Purulia Darshan</span> — your review helps fellow travelers explore Purulia better.
+      </p>
+    </div>
+  </section>
 
+  <!-- Feedback Form Card -->
+  <main class="flex-grow max-w-2xl w-full mx-auto px-4 py-12">
+    <div class="bg-white p-6 md:p-10 rounded-2xl shadow-xl border border-green-100">
 
-<!-- HERO -->
-<section
-  class="relative text-white min-h-[60vh] flex items-center justify-center bg-cover bg-center"
-  style="background-image: url('images/seen_7.jpg');"
->
-  <!-- Overlay -->
-  <div class="absolute inset-0 bg-black/60"></div>
-
-  <!-- Content -->
-  <div class="relative max-w-3xl mx-auto px-4 text-center">
-    <h1 class="text-4xl md:text-5xl font-extrabold tracking-wide">
-      Client Feedback
-    </h1>
-
-    <p class="mt-4 text-base md:text-lg text-gray-200">
-      Share your experience with <span class="text-yellow-300 font-semibold">Purulia Darshan</span>  
-      — your feedback helps us improve 🌿
-    </p>
-  </div>
-</section>
-
-
-
-<!-- FEEDBACK FORM -->
-<section class="max-w-3xl mx-auto px-4 py-12">
-  <div class="bg-white p-8 rounded-2xl shadow">
-
-    <form id="feedbackForm">
-
-      <!-- NAME -->
-      <div class="mb-4">
-        <label class="block text-sm font-semibold mb-1">Your Name</label>
-        <input type="text" name="name" required
-  placeholder="Enter your name"
-  class="w-full border rounded-lg px-4 py-2">
-
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-bold text-gray-900">Rate Your Purulia Trip</h2>
+        <p class="text-sm text-gray-500 mt-1">Tell us about our hospitality, driver support, and tour experience</p>
       </div>
 
-      <!-- TOUR PACKAGE DROPDOWN -->
-      <div class="mb-4">
-        <label class="block text-sm font-semibold mb-1">Tour Package</label>
-        <select name="tourPackage" required 
-        class="w-full border rounded-lg px-4 py-2 bg-white">
+      <form id="feedbackForm" class="space-y-5">
 
-          <option value="">-- Select Tour Package --</option>
-         <option>Ajodhya Hills Complete Circuit Tour</option>
-          <option>Baranti Side Complete Nature Tour</option>
-          <option>Ajodhya Hills & Baranti Combo Tour</option>
-          <option>Purulia Hills Explorer Tour</option>
-          <option>Purulia Waterfalls Special Tour</option>
-          <option>Purulia Lake & Dam Tour</option>
-          <option>Purulia Temple & Heritage Tour</option>
-          <option>Ayodhya Hills Tour</option>
-          <option>Baranti Lake Tour</option>
-          <option>Waterfall Explorer</option>
-          <option>Ayodhya with Baranti</option>
-          <option>Ayodhya • Baranti • Ranchi</option>
-          <option>Weekend Purulia Tour</option>
-          <option>Baranti Lake Tour</option>
-          <option>Ayodhya with Baranti</option>
-          <option>Ayodhya with Duarsini</option>
-          <option>Ayodhya & Dalma Range</option>
-          <option>Ayodhya • Baranti • Ranchi</option>
-          <option>Susunia Hills Adventure</option>
-          <option>Joychandi Pahar Tour</option>
-          <option>Garh Panchkot Heritage Tour</option>
-          <option>Purulia Tribal & Culture Tour</option>
-          <option>Complete Purulia Explorer</option>
-          <option>Baranti Lake Retreat</option>
-          <option>Baghmundi Nature Escape</option>
-          <option>Murguma Dam Scenic Tour</option>
-          <option>Pakhi Pahar Art & Nature Tour</option>
-          <option>Bamni Falls Nature Tour</option>
-          <option>Turga Dam & Waterfall Tour</option>
-          <option>Khairabera Dam Nature Tour</option>
-          <option>Mayur Pahar Scenic Tour</option>
-          <option>Pardi Dam Scenic Tour</option>
-          <option>Bamni Falls Nature Tour</option>
-          <option>Pakhi Pahar Art & Nature Tour</option>
-          <option>Mayur Pahar Hill View Tour</option>
-          <option>Pardi Dam Scenic Tour</option>
-          <option>Mathaburu Pahar Hill Tour</option>
-          <option>Pakbirra Jain Temple Tour</option>
-          <option>Telkupi Ancient Temple Tour</option>
-          <option>Joychandi Pahar Trek Tour</option>
-          <option>Garh Panchakot Temple & Hill Tour</option>
-          <option>Baranti Lake Sunset Tour</option>
-          <option>Turga & Bamni Waterfall Tour</option>
-          <option>Panchet Dam & Hills</option>
-          <option>Matha Forest Camping</option>
-          <option>Deulghata Temple Trail</option>
-          <option>Senior Citizen Relax Tour</option>
-          <option>Ayodhya Sunrise Trek</option>
-          <option>Purulia Photography Tour</option>
-          <option>Purulia Jungle Jeep Safari</option>
-          <option>Tribal Village Stay Experience</option>
-          <option>Purulia Honeymoon Escape</option>
-          <option>Educational Group Tour</option>
-          <option>Custom Private Purulia Tour</option>
-          <option>Others</option>
-        </select>
-      </div>
-
-      <!-- RATING -->
-      <div class="mb-4">
-        <label class="block text-sm font-semibold mb-2">Your Rating</label>
-
-        <div id="stars" class="flex gap-2 text-3xl cursor-pointer">
-          <i class="fa-regular fa-star text-yellow-400" data-value="1"></i>
-          <i class="fa-regular fa-star text-yellow-400" data-value="2"></i>
-          <i class="fa-regular fa-star text-yellow-400" data-value="3"></i>
-          <i class="fa-regular fa-star text-yellow-400" data-value="4"></i>
-          <i class="fa-regular fa-star text-yellow-400" data-value="5"></i>
+        <!-- Traveler Name -->
+        <div>
+          <label for="userName" class="block text-sm font-semibold text-gray-700 mb-1.5">
+            Your Name <span class="text-red-500">*</span>
+          </label>
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-gray-400">
+              <i class="fas fa-user"></i>
+            </span>
+            <input type="text" id="userName" name="name" required placeholder="Enter your full name"
+                   class="w-full border border-gray-300 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-green-600 transition">
+          </div>
         </div>
 
-        <input type="hidden" id="rating" name="rating" value="0">
-
-        <p class="text-xs text-gray-500 mt-1">
-          Selected Rating: <span id="ratingValue">0</span> / 5
-        </p>
-      </div>
-
-      <!-- FEEDBACK -->
-      <div class="mb-6">
-        <label class="block text-sm font-semibold mb-1">Your Feedback</label>
-       <textarea name="message" rows="4" required
-  placeholder="Tell us about your experience..."
-  class="w-full border rounded-lg px-4 py-2"></textarea>
-
-      </div>
-
-      <!-- SUBMIT -->
-      <button type="submit"
-        class="w-full bg-pink-500 hover:bg-pink-600 text-white py-3 rounded-xl font-semibold">
-        Submit Feedback
-      </button>
-
-    </form>
-
-    <p class="text-xs text-gray-500 text-center mt-4">
-      Thank you for your valuable feedback ❤️
-    </p>
-
-  </div>
-</section>
-
-
-     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Purulia Darshan</h3>
-                    <p class="text-gray-400">Showcasing the natural beauty, cultural heritage, and tourist attractions of Purulia, West Bengal.</p>
-                    <div class="flex space-x-4 mt-4">
-                        <a href="https://www.facebook.com/share/17XRtWrrUk/" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/purulia565?igsh=MTE2c25yYW9qbHBhaw==" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
-                        <li><a href="gallery.html" class="text-gray-400 hover:text-white">Photo Gallery</a></li>
-                        <li><a href="tourist_attractions.html" class="text-gray-400 hover:text-white">Tourist Attractions</a></li>
-                        <li><a href="cultural_events.html" class="text-gray-400 hover:text-white">Cultural Events</a></li>
-                         <li><a href="tour-enquiry.html" class="text-gray-400 hover:text-white">Enquiry</a></li>
-                        <li><a href="client-feedback.html" class="text-gray-400 hover:text-white">Feedback</a></li>
-                    </ul>
-                </div>
-             <div>
-  <h3 class="text-xl font-bold mb-4">Contact Us</h3>
-
-  <a href="https://www.google.com/maps?q=Purulia,West+Bengal,India"
-     class="text-gray-400 mb-2 block hover:text-white">
-    <i class="fas fa-map-marker-alt mr-2"></i>
-    Purulia, West Bengal, India
-  </a>
-
-  <a href="tel:+917076111493"
-     class="text-gray-400 mb-2 block hover:text-white">
-    <i class="fas fa-phone mr-2"></i>
-    +91 7076111493
-  </a>
-
-  <a href="mailto:somenmahato2004@gmail.com"
-     class="text-gray-400 block hover:text-white">
-    <i class="fas fa-envelope mr-2"></i>
-    somenmahato2004@gmail.com
-  </a>
-</div>
-
-            </div>
-            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
-                <p>© 2026 Purulia Darshan. All rights reserved.</p>
-            </div>
+        <!-- Clean Unique Tour Package Dropdown -->
+        <div>
+          <label for="tourPackage" class="block text-sm font-semibold text-gray-700 mb-1.5">
+            Tour Package Taken <span class="text-red-500">*</span>
+          </label>
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-green-600">
+              <i class="fas fa-suitcase-rolling"></i>
+            </span>
+            <select id="tourPackage" name="tourPackage" required
+                    class="w-full border border-gray-300 rounded-xl pl-10 pr-4 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-green-600 transition">
+              <option value="">-- Select Your Tour Package --</option>
+              <optgroup label="Popular Circuit Tours">
+                <option>Ajodhya Hills Complete Circuit Tour</option>
+                <option>Baranti Side Complete Nature Tour</option>
+                <option>Ajodhya Hills &amp; Baranti Combo Tour</option>
+                <option>Complete Purulia Explorer</option>
+                <option>Weekend Purulia Tour</option>
+              </optgroup>
+              <optgroup label="Hills, Dams & Waterfalls">
+                <option>Purulia Hills Explorer Tour</option>
+                <option>Purulia Waterfalls Special Tour</option>
+                <option>Turga &amp; Bamni Waterfall Tour</option>
+                <option>Purulia Lake &amp; Dam Tour</option>
+                <option>Murguma Dam Scenic Tour</option>
+                <option>Khairabera Dam Nature Tour</option>
+                <option>Mathaburu &amp; Mayur Pahar Tour</option>
+                <option>Joychandi &amp; Susunia Hills Adventure</option>
+              </optgroup>
+              <optgroup label="Heritage, Culture & Special Tours">
+                <option>Garh Panchakot Temple &amp; Hill Tour</option>
+                <option>Pakbirra &amp; Telkupi Heritage Tour</option>
+                <option>Purulia Tribal &amp; Chhau Culture Tour</option>
+                <option>Purulia Honeymoon Escape</option>
+                <option>Senior Citizen Relax Tour</option>
+                <option>Educational Group Tour</option>
+                <option>Custom Private Purulia Tour</option>
+                <option>Others</option>
+              </optgroup>
+            </select>
+          </div>
         </div>
-    </footer>
 
-   <script>
-document.addEventListener("DOMContentLoaded", () => {
+        <!-- Interactive Star Rating -->
+        <div class="bg-amber-50/70 border border-amber-200 rounded-xl p-4 text-center">
+          <label class="block text-sm font-bold text-gray-800 mb-2">
+            How would you rate your experience? <span class="text-red-500">*</span>
+          </label>
 
-  /* ===== Mobile Menu Toggle ===== */
-  const menuBtn = document.getElementById("menuBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
+          <div id="stars" class="flex justify-center gap-3 text-3xl md:text-4xl cursor-pointer select-none">
+            <i class="fa-regular fa-star text-amber-400 hover:scale-110 transition-transform" data-value="1"></i>
+            <i class="fa-regular fa-star text-amber-400 hover:scale-110 transition-transform" data-value="2"></i>
+            <i class="fa-regular fa-star text-amber-400 hover:scale-110 transition-transform" data-value="3"></i>
+            <i class="fa-regular fa-star text-amber-400 hover:scale-110 transition-transform" data-value="4"></i>
+            <i class="fa-regular fa-star text-amber-400 hover:scale-110 transition-transform" data-value="5"></i>
+          </div>
 
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
+          <input type="hidden" id="rating" name="rating" value="0">
 
-    mobileMenu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.add("hidden");
+          <p class="text-xs font-semibold text-amber-800 mt-2">
+            Selected Rating: <span id="ratingValue">0</span> / 5 <span id="ratingLabel" class="ml-1 text-gray-500"></span>
+          </p>
+        </div>
+
+        <!-- Feedback Message -->
+        <div>
+          <label for="feedbackMessage" class="block text-sm font-semibold text-gray-700 mb-1.5">
+            Your Feedback <span class="text-red-500">*</span>
+          </label>
+          <textarea id="feedbackMessage" name="message" rows="4" required
+                    placeholder="Share your favorite moments, hotel/resort experience, or driver feedback..."
+                    class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-600 transition"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="submitBtn"
+                class="w-full bg-green-700 hover:bg-green-800 active:bg-green-900 text-white py-3.5 rounded-xl font-bold text-base shadow-md hover:shadow-lg transition flex items-center justify-center gap-2">
+          <span>Submit Feedback</span>
+          <i class="fas fa-heart text-amber-300"></i>
+        </button>
+
+      </form>
+    </div>
+  </main>
+
+  <!-- Premium Compact Footer -->
+  <footer class="relative bg-gradient-to-b from-slate-900 via-gray-900 to-black text-gray-300 mt-10 border-t-4 border-emerald-500">
+    <div class="max-w-7xl mx-auto px-6 pt-12 pb-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+        <!-- Brand & Socials -->
+        <div class="space-y-4">
+          <a href="index.html" class="inline-flex items-center gap-2.5 text-2xl font-extrabold tracking-tight text-white">
+            <span class="w-9 h-9 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
+              <i class="fas fa-mountain text-base"></i>
+            </span>
+            <span class="bg-gradient-to-r from-emerald-400 to-green-300 bg-clip-text text-transparent">
+              Purulia Darshan
+            </span>
+          </a>
+
+          <p class="text-sm text-gray-400 leading-relaxed max-w-sm">
+            Showcasing the natural beauty, tribal heritage, Chhau culture, and unexplored hill attractions of Purulia, West Bengal.
+          </p>
+
+          <div class="flex items-center gap-3 pt-1">
+            <a href="https://www.facebook.com/share/17XRtWrrUk/" target="_blank" rel="noopener" aria-label="Facebook"
+               class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:bg-emerald-600 hover:border-emerald-500 hover:text-white hover:-translate-y-1 transition-all duration-300">
+              <i class="fab fa-facebook-f text-xs"></i>
+            </a>
+            <a href="https://www.instagram.com/purulia565?igsh=MTE2c25yYW9qbHBhaw==" target="_blank" rel="noopener" aria-label="Instagram"
+               class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-500 hover:to-purple-600 hover:border-transparent hover:text-white hover:-translate-y-1 transition-all duration-300">
+              <i class="fab fa-instagram text-xs"></i>
+            </a>
+            <a href="https://wa.me/917076111493" target="_blank" rel="noopener" aria-label="WhatsApp"
+               class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:bg-[#25d366] hover:border-[#25d366] hover:text-white hover:-translate-y-1 transition-all duration-300">
+              <i class="fab fa-whatsapp text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Compact Quick Links -->
+        <div>
+          <h3 class="text-white font-bold text-base uppercase tracking-wider mb-4 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            Quick Links
+          </h3>
+          <ul class="space-y-2.5 text-sm">
+            <li>
+              <a href="index.html" class="group flex items-center text-gray-400 hover:text-emerald-400 transition">
+                <i class="fas fa-chevron-right text-[10px] mr-2 text-emerald-500 opacity-0 -ml-3 group-hover:opacity-100 group-hover:ml-0 transition-all"></i>
+                <span>Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="tour.html" class="group flex items-center text-gray-400 hover:text-emerald-400 transition">
+                <i class="fas fa-chevron-right text-[10px] mr-2 text-emerald-500 opacity-0 -ml-3 group-hover:opacity-100 group-hover:ml-0 transition-all"></i>
+                <span>Tour Packages</span>
+              </a>
+            </li>
+            <li>
+              <a href="places.html" class="group flex items-center text-gray-400 hover:text-emerald-400 transition">
+                <i class="fas fa-chevron-right text-[10px] mr-2 text-emerald-500 opacity-0 -ml-3 group-hover:opacity-100 group-hover:ml-0 transition-all"></i>
+                <span>Places to Visit</span>
+              </a>
+            </li>
+            <li>
+              <a href="contact.html" class="group flex items-center text-gray-400 hover:text-emerald-400 transition">
+                <i class="fas fa-chevron-right text-[10px] mr-2 text-emerald-500 opacity-0 -ml-3 group-hover:opacity-100 group-hover:ml-0 transition-all"></i>
+                <span>Contact Us</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-white font-bold text-base uppercase tracking-wider mb-4 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            Contact Us
+          </h3>
+
+          <ul class="space-y-3 text-sm">
+            <li>
+              <a href="https://www.google.com/maps?q=Purulia,West+Bengal,India" target="_blank" rel="noopener"
+                 class="flex items-start gap-3 text-gray-400 hover:text-white transition group">
+                <span class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition">
+                  <i class="fas fa-map-marker-alt text-xs"></i>
+                </span>
+                <span class="pt-1">Kotshila, Purulia, West Bengal, India</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:+917076111493"
+                 class="flex items-center gap-3 text-gray-400 hover:text-white transition group">
+                <span class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition">
+                  <i class="fas fa-phone-alt text-xs"></i>
+                </span>
+                <span>+91 7076111493</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:somenmahato2004@gmail.com"
+                 class="flex items-center gap-3 text-gray-400 hover:text-white transition group">
+                <span class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition">
+                  <i class="fas fa-envelope text-xs"></i>
+                </span>
+                <span class="break-all">somenmahato2004@gmail.com</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-gray-800/80 mt-8 pt-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-500">
+        <p>© 2026 <span class="text-gray-300 font-semibold">Purulia Darshan</span>. All rights reserved.</p>
+        <a href="book-tour.html" class="text-emerald-400 font-semibold hover:underline">Book Your Trip →</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Mobile Menu Toggle
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+      }
+
+      // Interactive Star Rating
+      const stars = document.querySelectorAll("#stars i");
+      const ratingInput = document.getElementById("rating");
+      const ratingValue = document.getElementById("ratingValue");
+      const ratingLabel = document.getElementById("ratingLabel");
+      const labels = ["", "(Poor)", "(Fair)", "(Good)", "(Very Good)", "(Excellent!)"];
+
+      function renderStars(count) {
+        stars.forEach(s => {
+          const val = Number(s.getAttribute("data-value"));
+          if (val <= count) {
+            s.classList.remove("fa-regular");
+            s.classList.add("fa-solid");
+          } else {
+            s.classList.remove("fa-solid");
+            s.classList.add("fa-regular");
+          }
+        });
+      }
+
+      stars.forEach(star => {
+        star.addEventListener("mouseenter", () => {
+          renderStars(Number(star.getAttribute("data-value")));
+        });
+
+        star.addEventListener("mouseleave", () => {
+          renderStars(Number(ratingInput.value));
+        });
+
+        star.addEventListener("click", () => {
+          const value = Number(star.getAttribute("data-value"));
+          ratingInput.value = value;
+          ratingValue.textContent = value;
+          ratingLabel.textContent = labels[value] || "";
+          renderStars(value);
+        });
       });
-    });
-  }
 
-  /* ===== Active Menu Highlight ===== */
-  const currentPage =
-    window.location.pathname.split("/").pop() || "index.html";
+      // Form Submission
+      const feedbackForm = document.getElementById("feedbackForm");
+      const submitBtn = document.getElementById("submitBtn");
 
-  document.querySelectorAll("nav a, #mobileMenu a").forEach(link => {
-    const linkPage = link.getAttribute("href");
+      feedbackForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-    if (linkPage === currentPage) {
-      link.classList.add("nav-active");
-    }
-  });
+        const data = {
+          name: document.getElementById("userName").value.trim(),
+          tourPackage: document.getElementById("tourPackage").value,
+          rating: Number(ratingInput.value),
+          feedback: document.getElementById("feedbackMessage").value.trim()
+        };
 
-});
+        if (!data.rating || data.rating < 1) {
+          alert("Please select a star rating (1 to 5) before submitting.");
+          return;
+        }
 
-const stars = document.querySelectorAll('#stars i');
-  const ratingInput = document.getElementById('rating');
-  const ratingValue = document.getElementById('ratingValue');
+        const originalHTML = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> <span>Submitting...</span>`;
 
-  stars.forEach(star => {
-    star.addEventListener('click', () => {
-      const value = star.getAttribute('data-value');
-      ratingInput.value = value;
-      ratingValue.textContent = value;
+        try {
+          const res = await fetch("https://purulia-backend-1.onrender.com/api/feedback", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+          });
 
-      stars.forEach(s => {
-        if (s.getAttribute('data-value') <= value) {
-          s.classList.remove('fa-regular');
-          s.classList.add('fa-solid');
-        } else {
-          s.classList.remove('fa-solid');
-          s.classList.add('fa-regular');
+          const result = await res.json();
+
+          if (res.ok) {
+            alert(`Thank you ${data.name}! Your ${data.rating}-star feedback has been submitted. ❤️`);
+            feedbackForm.reset();
+            ratingInput.value = 0;
+            ratingValue.textContent = "0";
+            ratingLabel.textContent = "";
+            renderStars(0);
+          } else {
+            alert(result.error || "Something went wrong! Please try again.");
+          }
+        } catch (err) {
+          alert("Server error. Please try again later.");
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalHTML;
         }
       });
     });
-  });
-
-</script>
-
-
-
-<script>
-document.getElementById("feedbackForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const form = e.target;
-
-  const data = {
-    name: form.name.value,
-    tourPackage: form.tourPackage.value,
-    rating: Number(form.rating.value),
-    feedback: form.message.value
-  };
-
-  if (!data.rating || data.rating < 1) {
-    alert("Please select a rating");
-    return;
-  }
-
-  try {
-    const res = await fetch(
-      "https://purulia-backend-1.onrender.com/api/feedback",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      }
-    );
-
-    const result = await res.json();
-
-    if (res.ok) {
-      alert("Thank you for your feedback ❤️");
-      form.reset();
-      document.getElementById("ratingValue").textContent = "0";
-    } else {
-      alert(result.error || "Something went wrong!");
-    }
-  } catch (err) {
-    alert("Server error. Try again later.");
-  }
-});
-</script>
-
-
-
-
-<!-- STAR SCRIPT -->
-
+  </script>
 
 </body>
 </html>
