@@ -2,325 +2,393 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- SEO Title -->
   <title>Book Your Tour | Purulia Darshan</title>
-
-  <!-- Basic SEO -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Book your Purulia tour package easily with Purulia Darshan – Ajodhya Hills, Baranti, Waterfalls, and custom private tours.">
   <meta name="keywords" content="Purulia tour booking, Purulia Darshan packages, Ajodhya Hills tour booking, Baranti tour">
   <meta name="author" content="Purulia Darshan">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph / Facebook / WhatsApp -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://puruliadarshan.online/book-tour.html">
   <meta property="og:title" content="Book Your Purulia Tour | Purulia Darshan">
   <meta property="og:description" content="Reserve your Purulia tour package with local experts.">
   <meta property="og:image" content="https://puruliadarshan.online/cover.jpg">
 
-  <!-- Canonical -->
   <link rel="canonical" href="https://puruliadarshan.online/book-tour.html">
-
-  <!-- CSS FILES -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Tailwind CSS -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    .wa-float {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      width: 56px;
+      height: 56px;
+      background-color: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      z-index: 40;
+      transition: transform 0.25s ease;
+    }
+    .wa-float:hover { transform: scale(1.08); }
+    .wa-float img { width: 32px; height: 32px; }
+  </style>
 </head>
 
-<body class="bg-gradient-to-br from-green-50 via-white to-emerald-50 font-sans min-h-screen flex flex-col">
+<body class="bg-gradient-to-br from-emerald-50 via-white to-green-50 font-sans text-gray-800 min-h-screen flex flex-col">
 
-  <!-- Header -->
-  <header class="bg-green-700 text-white shadow-lg sticky top-0 z-50">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+  <!-- Navbar -->
+  <header class="bg-green-800 text-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3.5 flex justify-between items-center">
       <div>
-        <a href="index.html" class="text-2xl md:text-3xl font-bold tracking-tight">Purulia Darshan</a>
-        <p class="text-green-200 text-xs md:text-sm hidden md:block">
-          Discover the Unexplored Beauty of West Bengal
-        </p>
+        <a href="index.html" class="text-2xl font-extrabold tracking-tight flex items-center gap-2">
+          <i class="fas fa-mountain text-emerald-300"></i>
+          <span>Purulia Darshan</span>
+        </a>
+        <p class="text-green-200 text-xs hidden sm:block">Explore Ajodhya Hills, Baranti &amp; Unexplored Bengal</p>
       </div>
 
-      <!-- Desktop Menu -->
+      <!-- Desktop Navigation -->
       <nav class="hidden md:block">
-        <ul class="flex space-x-6 font-medium">
-          <li><a href="index.html" class="hover:text-green-200 transition">Home</a></li>
-          <li><a href="about.html" class="hover:text-green-200 transition">About</a></li>
-          <li><a href="places.html" class="hover:text-green-200 transition">Places</a></li>
-          <li><a href="tour.html" class="hover:text-green-200 transition">Packages</a></li>
-          <li><a href="festivals.html" class="hover:text-green-200 transition">Festivals</a></li>
-          <li><a href="gallery.html" class="hover:text-green-200 transition">Gallery</a></li>
-          <li><a href="contact.html" class="hover:text-green-200 transition">Contact</a></li>
+        <ul class="flex space-x-6 text-sm font-semibold">
+          <li><a href="index.html" class="hover:text-emerald-300 transition">Home</a></li>
+          <li><a href="about.html" class="hover:text-emerald-300 transition">About</a></li>
+          <li><a href="places.html" class="hover:text-emerald-300 transition">Places</a></li>
+          <li><a href="tour.html" class="hover:text-emerald-300 transition">Packages</a></li>
+          <li><a href="festivals.html" class="hover:text-emerald-300 transition">Festivals</a></li>
+          <li><a href="gallery.html" class="hover:text-emerald-300 transition">Gallery</a></li>
+          <li><a href="contact.html" class="hover:text-emerald-300 transition">Contact</a></li>
         </ul>
       </nav>
 
-      <!-- Mobile Button -->
-      <button id="menuBtn" class="md:hidden text-2xl focus:outline-none">
+      <!-- Mobile Menu Toggle -->
+      <button id="menuBtn" aria-label="Toggle Menu" class="md:hidden text-2xl p-1 focus:outline-none">
         <i class="fas fa-bars"></i>
       </button>
     </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden md:hidden bg-green-800 px-4 pb-4 space-y-1">
-      <a href="index.html" class="block py-2 border-b border-green-700">Home</a>
-      <a href="about.html" class="block py-2 border-b border-green-700">About</a>
-      <a href="places.html" class="block py-2 border-b border-green-700">Places</a>
-      <a href="tour.html" class="block py-2 border-b border-green-700">Packages</a>
-      <a href="festivals.html" class="block py-2 border-b border-green-700">Festivals</a>
-      <a href="gallery.html" class="block py-2 border-b border-green-700">Gallery</a>
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-green-900 px-4 pb-4 space-y-1 text-sm font-medium">
+      <a href="index.html" class="block py-2 border-b border-green-800">Home</a>
+      <a href="about.html" class="block py-2 border-b border-green-800">About</a>
+      <a href="places.html" class="block py-2 border-b border-green-800">Places</a>
+      <a href="tour.html" class="block py-2 border-b border-green-800">Packages</a>
+      <a href="festivals.html" class="block py-2 border-b border-green-800">Festivals</a>
+      <a href="gallery.html" class="block py-2 border-b border-green-800">Gallery</a>
       <a href="contact.html" class="block py-2">Contact</a>
     </div>
   </header>
 
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/917076111493" class="wa-float" target="_blank">
+  <!-- Floating WhatsApp Support -->
+  <a href="https://wa.me/917076111493" class="wa-float" target="_blank" rel="noopener" title="Chat on WhatsApp">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
   </a>
 
-  <!-- Main Booking Section -->
+  <!-- Main Content -->
   <main class="flex-grow max-w-6xl w-full mx-auto px-4 py-10">
-    
-    <!-- Top Heading -->
-    <div class="text-center mb-8">
-      <span class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Instant Tour Reservation</span>
-      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mt-2">Complete Your Booking</h2>
-      <p class="text-gray-600 mt-1">Fill in your travel details below and our Purulia team will confirm your trip shortly.</p>
+
+    <!-- Page Title -->
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <span class="inline-block bg-green-100 text-green-800 text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider">
+        Instant Tour Reservation
+      </span>
+      <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mt-2.5">Book Your Purulia Trip</h1>
+      <p class="text-gray-600 text-sm md:text-base mt-2">
+        Select your package, enter traveler details, and receive an instant booking confirmation directly in your email.
+      </p>
     </div>
 
-    <!-- 2-Column Layout -->
+    <!-- 2-Column Booking Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
-      <!-- Left Column: Selected Package Summary Card (5 Cols) -->
-      <div class="lg:col-span-5 bg-white rounded-2xl shadow-xl overflow-hidden border border-green-100 sticky top-24">
-        <div class="bg-gradient-to-r from-green-700 to-emerald-600 p-6 text-white">
-          <div class="flex justify-between items-center mb-2">
-            <span class="text-xs uppercase tracking-wider bg-white/20 px-2.5 py-1 rounded-md font-semibold">Selected Package</span>
-            <span id="summaryDuration" class="text-xs font-bold bg-amber-400 text-gray-900 px-2.5 py-1 rounded-md">3D / 2N</span>
+      <!-- Left Card: Live Package Summary -->
+      <aside class="lg:col-span-5 bg-white rounded-2xl shadow-lg border border-green-100 overflow-hidden lg:sticky lg:top-24">
+        <div class="bg-gradient-to-r from-green-800 to-emerald-700 p-6 text-white">
+          <div class="flex justify-between items-center mb-3">
+            <span class="text-xs font-semibold uppercase tracking-wider bg-white/20 px-2.5 py-1 rounded-md">
+              Package Summary
+            </span>
+            <span id="summaryDuration" class="text-xs font-bold bg-amber-400 text-gray-900 px-3 py-1 rounded-md">
+              3D / 2N
+            </span>
           </div>
-          <h3 id="summaryPackageName" class="text-2xl font-bold leading-snug">Loading Package...</h3>
-          <p class="text-green-100 text-sm mt-1"><i class="fas fa-map-marker-alt mr-1"></i> Purulia, West Bengal</p>
+          <h2 id="summaryPackageName" class="text-xl md:text-2xl font-bold leading-snug">
+            Ajodhya Hills Complete Circuit Tour
+          </h2>
+          <p class="text-emerald-100 text-xs md:text-sm mt-1.5 flex items-center gap-1.5">
+            <i class="fas fa-map-marker-alt"></i> Purulia, West Bengal
+          </p>
         </div>
 
         <div class="p-6 space-y-5">
-          <!-- Price Calculation Box -->
-          <div class="bg-green-50/80 border border-green-200 rounded-xl p-4">
-            <div class="flex justify-between items-center text-sm text-gray-600 mb-2">
-              <span>Package Rate:</span>
-              <span id="summaryBasePrice" class="font-semibold text-gray-800">₹7,999 / person</span>
+          <!-- Dynamic Fare Breakdown -->
+          <div class="bg-green-50 border border-green-200 rounded-xl p-4 space-y-2.5">
+            <div class="flex justify-between text-sm text-gray-600">
+              <span>Standard Rate:</span>
+              <span id="summaryBasePrice" class="font-semibold text-gray-900">₹7,999 / person</span>
             </div>
-            <div class="flex justify-between items-center text-sm text-gray-600 mb-3 pb-3 border-b border-green-200">
-              <span>Number of Travelers:</span>
-              <span id="summaryTravelers" class="font-semibold text-gray-800">2 Persons</span>
+            <div class="flex justify-between text-sm text-gray-600 pb-3 border-b border-green-200">
+              <span>Travelers:</span>
+              <span id="summaryTravelers" class="font-semibold text-gray-900">2 Persons</span>
             </div>
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center pt-1">
               <span class="font-bold text-gray-800">Estimated Total:</span>
               <span id="summaryTotalPrice" class="text-2xl font-extrabold text-green-700">₹15,998</span>
             </div>
-            <p class="text-xs text-gray-500 mt-2">* Final price may adjust based on hotel category & vehicle preference.</p>
+            <p class="text-[11px] text-gray-500 pt-1">
+              * No advance payment required right now. Our team will confirm availability first.
+            </p>
           </div>
 
-          <!-- Package Highlights / Trust Badges -->
-          <div class="space-y-2.5 text-sm text-gray-600">
-            <p class="font-bold text-gray-800 text-base">Why Book With Purulia Darshan?</p>
-            <div class="flex items-center"><i class="fas fa-check-circle text-green-600 mr-2.5"></i> <span>Verified Local Cars & Experienced Drivers</span></div>
-            <div class="flex items-center"><i class="fas fa-check-circle text-green-600 mr-2.5"></i> <span>Best Family & Couple Friendly Resorts</span></div>
-            <div class="flex items-center"><i class="fas fa-check-circle text-green-600 mr-2.5"></i> <span>No Hidden Charges • 24/7 On-Trip Support</span></div>
-          </div>
-
-          <!-- Change Package Link -->
-          <div class="pt-3 border-t border-gray-100 flex justify-between items-center text-sm">
-            <span class="text-gray-500">Want a different tour?</span>
-            <a href="tour.html" class="text-green-700 hover:text-green-800 font-semibold flex items-center">
-              <i class="fas fa-exchange-alt mr-1.5"></i> Change Package
-            </a>
+          <!-- Package Inclusions -->
+          <div class="space-y-2 text-sm text-gray-600">
+            <h3 class="font-bold text-gray-800">What's Included:</h3>
+            <div class="flex items-start gap-2.5">
+              <i class="fas fa-check-circle text-green-600 mt-1"></i>
+              <span>Sanitized Private Cab with Experienced Local Driver</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i class="fas fa-check-circle text-green-600 mt-1"></i>
+              <span>Comfortable Resort / Homestay Accommodation</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i class="fas fa-check-circle text-green-600 mt-1"></i>
+              <span>Station Pickup &amp; Drop (Purulia / Barabhum)</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i class="fas fa-check-circle text-green-600 mt-1"></i>
+              <span>24/7 Local Assistance from Kotshila &amp; Purulia Team</span>
+            </div>
           </div>
         </div>
-      </div>
+      </aside>
 
-      <!-- Right Column: Stylish Booking Form (7 Cols) -->
-      <div class="lg:col-span-7 bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100">
-        <h3 class="text-xl font-bold text-gray-800 mb-6 pb-3 border-b flex items-center">
-          <i class="fas fa-clipboard-check text-green-600 mr-2.5"></i> Traveler Information
-        </h3>
+      <!-- Right Card: Booking Form -->
+      <section class="lg:col-span-7 bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-gray-100">
+        <div class="flex items-center justify-between pb-4 mb-6 border-b border-gray-100">
+          <h2 class="text-xl font-bold text-gray-900 flex items-center gap-2">
+            <i class="fas fa-calendar-check text-green-600"></i>
+            <span>Traveler Details</span>
+          </h2>
+          <span class="text-xs text-gray-400 font-medium">* Required fields</span>
+        </div>
 
-        <form id="enquiryForm" class="space-y-5">
+        <form id="bookingForm" class="space-y-5">
 
-          <!-- Locked Selected Package Input (No Dropdown Needed) -->
+          <!-- Package Selector -->
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1.5">Selected Tour Package</label>
+            <label for="packageSelect" class="block text-sm font-semibold text-gray-700 mb-1.5">
+              Select Tour Package <span class="text-red-500">*</span>
+            </label>
             <div class="relative">
               <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-green-600">
                 <i class="fas fa-suitcase-rolling"></i>
               </span>
-              <input type="text" id="packageInput" name="package" readonly required
-                     class="w-full bg-green-50/60 border border-green-300 text-green-950 font-bold rounded-xl pl-10 pr-10 py-3 focus:outline-none cursor-not-allowed">
-              <span class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-green-600" title="Auto-selected package">
-                <i class="fas fa-lock text-sm"></i>
-              </span>
+              <select id="packageSelect" name="tourPackage" required
+                      class="w-full bg-green-50/50 border border-green-300 text-gray-900 font-semibold rounded-xl pl-10 pr-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-600 transition">
+                <option value="Ajodhya Hills Complete Circuit Tour">Ajodhya Hills Complete Circuit Tour (3D/2N - ₹7,999/person)</option>
+                <option value="Baranti Side Complete Nature Tour">Baranti Side Complete Nature Tour (3D/2N - ₹6,499/person)</option>
+                <option value="Ajodhya Hills & Baranti Combo Tour">Ajodhya Hills &amp; Baranti Combo Tour (3D/2N - ₹8,499/person)</option>
+                <option value="Purulia Hills Explorer Tour">Purulia Hills Explorer Tour (3D/2N - ₹7,999/person)</option>
+                <option value="Purulia Waterfalls Special Tour">Purulia Waterfalls Special Tour (2D/1N - ₹5,999/person)</option>
+                <option value="Purulia Lake & Dam Tour">Purulia Lake &amp; Dam Tour (2D/1N - ₹6,499/person)</option>
+                <option value="Purulia Honeymoon Escape">Purulia Honeymoon Escape (3D/2N - ₹8,999/couple)</option>
+                <option value="Educational Group Tour">Educational Group Tour (Custom Quote)</option>
+                <option value="Custom Private Purulia Tour">Custom Private Purulia Tour (Custom Quote)</option>
+              </select>
             </div>
           </div>
 
-          <!-- Row 1: Full Name & Phone Number -->
+          <!-- Full Name & Phone -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <!-- Name -->
             <div>
-              <label class="block text-sm font-semibold text-gray-700 mb-1.5">Full Name <span class="text-red-500">*</span></label>
+              <label for="customerName" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                Full Name <span class="text-red-500">*</span>
+              </label>
               <div class="relative">
                 <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-gray-400">
                   <i class="fas fa-user"></i>
                 </span>
-                <input type="text" name="name" required
-                       placeholder="Enter your full name"
-                       class="w-full border border-gray-300 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition">
+                <input type="text" id="customerName" name="name" required placeholder="e.g. Rahul Chatterjee"
+                       class="w-full border border-gray-300 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-green-600 transition">
               </div>
             </div>
 
-            <!-- Phone -->
             <div>
-              <label class="block text-sm font-semibold text-gray-700 mb-1.5">Phone / WhatsApp Number <span class="text-red-500">*</span></label>
+              <label for="customerPhone" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                WhatsApp / Mobile Number <span class="text-red-500">*</span>
+              </label>
               <div class="relative">
                 <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-gray-400">
                   <i class="fas fa-phone-alt"></i>
                 </span>
-                <input type="tel" name="phone" required pattern="[0-9+\-\s]{10,15}"
-                       placeholder="10-digit mobile number"
-                       class="w-full border border-gray-300 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition">
+                <input type="tel" id="customerPhone" name="phone" required pattern="[0-9+\-\s]{10,15}" placeholder="10-digit mobile number"
+                       class="w-full border border-gray-300 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-green-600 transition">
               </div>
             </div>
           </div>
 
-          <!-- Row 2: Number of Persons & Travel Date -->
+          <!-- Email Address (Required for Instant Confirmation) -->
+          <div>
+            <label for="customerEmail" class="block text-sm font-semibold text-gray-700 mb-1.5">
+              Email Address <span class="text-red-500">*</span>
+              <span class="text-xs font-normal text-green-700 ml-1">(Booking receipt will be sent here)</span>
+            </label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-gray-400">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <input type="email" id="customerEmail" name="email" required placeholder="you@example.com"
+                     class="w-full border border-gray-300 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-green-600 transition">
+            </div>
+          </div>
+
+          <!-- Travelers Count & Travel Date -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <!-- Persons -->
             <div>
-              <label class="block text-sm font-semibold text-gray-700 mb-1.5">Number of Persons <span class="text-red-500">*</span></label>
+              <label for="personsInput" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                Number of Travelers <span class="text-red-500">*</span>
+              </label>
               <div class="relative">
                 <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-gray-400">
                   <i class="fas fa-users"></i>
                 </span>
-                <input type="number" id="personsInput" name="persons" min="1" value="2" required
-                       placeholder="How many people?"
-                       class="w-full border border-gray-300 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition">
+                <input type="number" id="personsInput" name="travelers" min="1" max="100" value="2" required
+                       class="w-full border border-gray-300 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-green-600 transition">
               </div>
             </div>
 
-            <!-- Date -->
             <div>
-              <label class="block text-sm font-semibold text-gray-700 mb-1.5">Travel Date <span class="text-red-500">*</span></label>
+              <label for="dateInput" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                Preferred Travel Date <span class="text-red-500">*</span>
+              </label>
               <div class="relative">
                 <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-gray-400">
                   <i class="fas fa-calendar-alt"></i>
                 </span>
-                <input type="date" id="dateInput" name="date" required
-                       class="w-full border border-gray-300 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition">
+                <input type="date" id="dateInput" name="travelDate" required
+                       class="w-full border border-gray-300 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-green-600 transition">
               </div>
             </div>
           </div>
 
-          <!-- Row 3: Email & Pickup Location -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <!-- Pickup -->
-            <div>
-              <label class="block text-sm font-semibold text-gray-700 mb-1.5">Pickup Location</label>
-              <div class="relative">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-gray-400">
-                  <i class="fas fa-map-pin"></i>
-                </span>
-                <input type="text" name="pickup"
-                       placeholder="Purulia Stn / Barabhum / Asansol"
-                       class="w-full border border-gray-300 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition">
-              </div>
-            </div>
-
-            <!-- Email -->
-            <div>
-              <label class="block text-sm font-semibold text-gray-700 mb-1.5">Email Address <span class="text-gray-400 font-normal">(Optional)</span></label>
-              <div class="relative">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-gray-400">
-                  <i class="fas fa-envelope"></i>
-                </span>
-                <input type="email" name="email"
-                       placeholder="yourname@email.com"
-                       class="w-full border border-gray-300 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition">
-              </div>
-            </div>
-          </div>
-
-          <!-- Message -->
+          <!-- Pickup Station -->
           <div>
-            <label class="block text-sm font-semibold text-gray-700 mb-1.5">Special Request / Customization</label>
-            <textarea name="message" rows="3"
-                      placeholder="Let us know if you need AC/Non-AC rooms, specific car preference, or dietary requirements..."
-                      class="w-full border border-gray-300 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition"></textarea>
+            <label for="pickupInput" class="block text-sm font-semibold text-gray-700 mb-1.5">
+              Pickup Railway Station / City
+            </label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-gray-400">
+                <i class="fas fa-train"></i>
+              </span>
+              <input type="text" id="pickupInput" name="pickup" placeholder="e.g. Purulia Jn / Barabhum / Muri / Asansol"
+                     class="w-full border border-gray-300 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-green-600 transition">
+            </div>
+          </div>
+
+          <!-- Custom Requirements -->
+          <div>
+            <label for="messageInput" class="block text-sm font-semibold text-gray-700 mb-1.5">
+              Special Requests / Room &amp; Car Preference
+            </label>
+            <textarea id="messageInput" name="message" rows="3"
+                      placeholder="Mention AC/Non-AC room preference, senior citizens, kids, or custom sightseeing requests..."
+                      class="w-full border border-gray-300 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-green-600 transition"></textarea>
           </div>
 
           <!-- Submit Button -->
           <button type="submit" id="submitBtn"
-                  class="w-full bg-green-600 hover:bg-green-700 active:bg-green-800 text-white py-3.5 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition flex justify-center items-center space-x-2">
+                  class="w-full bg-green-700 hover:bg-green-800 active:bg-green-900 text-white py-3.5 rounded-xl font-bold text-base md:text-lg shadow-md hover:shadow-lg transition flex items-center justify-center gap-2">
             <span>Confirm Booking Request</span>
-            <i class="fas fa-arrow-right"></i>
+            <i class="fas fa-paper-plane"></i>
           </button>
 
-          <!-- Note -->
-          <p class="text-xs text-gray-500 text-center flex items-center justify-center gap-1.5">
-            <i class="fas fa-shield-alt text-green-600"></i>
-            Your phone number is safe with us. Our representative will call you shortly to finalize your booking.
+          <p class="text-xs text-center text-gray-500 flex items-center justify-center gap-1.5">
+            <i class="fas fa-lock text-green-600"></i>
+            <span>Instant email confirmation &amp; direct callback from Purulia Darshan team.</span>
           </p>
-
         </form>
-      </div>
+      </section>
 
     </div>
   </main>
 
+  <!-- Confirmation Success Modal -->
+  <div id="successModal" class="fixed inset-0 bg-black/60 backdrop-blur-xs hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 md:p-8 text-center shadow-2xl animate-fadeIn">
+      <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto text-3xl mb-4">
+        <i class="fas fa-check"></i>
+      </div>
+      <h3 class="text-2xl font-extrabold text-gray-900">Booking Received!</h3>
+      <p id="modalSummaryText" class="text-gray-600 text-sm mt-2 leading-relaxed">
+        We have saved your booking and sent a confirmation email with your trip summary.
+      </p>
+      <div class="mt-6 space-y-3">
+        <a id="modalWhatsappLink" href="https://wa.me/917076111493" target="_blank" rel="noopener"
+           class="w-full bg-[#25d366] hover:bg-[#1ebe5d] text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition">
+          <i class="fab fa-whatsapp text-xl"></i>
+          <span>Chat on WhatsApp Now</span>
+        </a>
+        <button id="closeModalBtn" type="button"
+                class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-2.5 rounded-xl transition">
+          Done
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-8 mt-12">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div>
-          <h3 class="text-xl font-bold mb-4">Purulia Darshan</h3>
-          <p class="text-gray-400">Showcasing the natural beauty, cultural heritage, and tourist attractions of Purulia, West Bengal.</p>
-          <div class="flex space-x-4 mt-4">
-            <a href="https://www.facebook.com/share/17XRtWrrUk/" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/purulia565?igsh=MTE2c25yYW9qbHBhaw==" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-          </div>
-        </div>
-        <div>
-          <h3 class="text-xl font-bold mb-4">Quick Links</h3>
-          <ul class="space-y-2">
-            <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
-            <li><a href="tour.html" class="text-gray-400 hover:text-white">Tour Packages</a></li>
-            <li><a href="gallery.html" class="text-gray-400 hover:text-white">Photo Gallery</a></li>
-            <li><a href="tourist_attractions.html" class="text-gray-400 hover:text-white">Tourist Attractions</a></li>
-            <li><a href="cultural_events.html" class="text-gray-400 hover:text-white">Cultural Events</a></li>
-            <li><a href="client-feedback.html" class="text-gray-400 hover:text-white">Feedback</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-xl font-bold mb-4">Contact Us</h3>
-          <a href="https://www.google.com/maps?q=Purulia,West+Bengal,India" class="text-gray-400 mb-2 block hover:text-white">
-            <i class="fas fa-map-marker-alt mr-2"></i> Purulia, West Bengal, India
-          </a>
-          <a href="tel:+917076111493" class="text-gray-400 mb-2 block hover:text-white">
-            <i class="fas fa-phone mr-2"></i> +91 7076111493
-          </a>
-          <a href="mailto:somenmahato2004@gmail.com" class="text-gray-400 block hover:text-white">
-            <i class="fas fa-envelope mr-2"></i> somenmahato2004@gmail.com
-          </a>
+  <footer class="bg-gray-900 text-gray-300 py-10 mt-14">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-xl font-bold text-white mb-3">Purulia Darshan</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          Your trusted local travel partner in Purulia. Customized hill tours, lakeside stays, Chhau cultural experiences, and reliable cab services.
+        </p>
+        <div class="flex space-x-4 mt-4">
+          <a href="https://www.facebook.com/share/17XRtWrrUk/" target="_blank" rel="noopener" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/purulia565?igsh=MTE2c25yYW9qbHBhaw==" target="_blank" rel="noopener" class="hover:text-white"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
-      <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
-        <p>© 2026 Purulia Darshan. All rights reserved.</p>
+
+      <div>
+        <h3 class="text-lg font-bold text-white mb-3">Quick Links</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html" class="hover:text-white">Home</a></li>
+          <li><a href="tour.html" class="hover:text-white">Tour Packages</a></li>
+          <li><a href="places.html" class="hover:text-white">Tourist Places</a></li>
+          <li><a href="gallery.html" class="hover:text-white">Photo Gallery</a></li>
+          <li><a href="contact.html" class="hover:text-white">Contact Us</a></li>
+        </ul>
       </div>
+
+      <div>
+        <h3 class="text-lg font-bold text-white mb-3">Contact Details</h3>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><i class="fas fa-map-marker-alt text-green-500 mr-2"></i> Kotshila, Purulia, West Bengal</li>
+          <li><a href="tel:+917076111493" class="hover:text-white"><i class="fas fa-phone text-green-500 mr-2"></i> +91 7076111493</a></li>
+          <li><a href="mailto:somenmahato2004@gmail.com" class="hover:text-white"><i class="fas fa-envelope text-green-500 mr-2"></i> somenmahato2004@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-800 mt-8 pt-6 text-center text-xs text-gray-500">
+      © 2026 Purulia Darshan. All rights reserved.
     </div>
   </footer>
 
-  <!-- SINGLE CLEAN SCRIPT -->
+  <!-- JavaScript Logic -->
   <script>
+    // APNAR GOOGLE APPS SCRIPT WEB APP URL EKHANE BOSHAN
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxskjhhAfHHjuSbghuqI1foWupLSWwgDs_UVat6B91fwvEdtP48GfBuHUr1G-daTwIn/exec";
+
     const PACKAGES_MAP = {
       "Ajodhya Hills Complete Circuit Tour": { price: 7999, unit: "person", duration: "3D / 2N" },
       "Baranti Side Complete Nature Tour": { price: 6499, unit: "person", duration: "3D / 2N" },
@@ -334,51 +402,43 @@
     };
 
     document.addEventListener("DOMContentLoaded", () => {
-      // পুরনো ভুল মেমোরি মুছে ফেলা
-      localStorage.removeItem("selectedPackage");
-
-      /* 1. Mobile Menu Toggle */
+      // 1. Mobile Menu Toggle
       const menuBtn = document.getElementById("menuBtn");
       const mobileMenu = document.getElementById("mobileMenu");
-      if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
-      }
+      menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
 
-      /* 2. Set Minimum Travel Date to Today */
+      // 2. Minimum Travel Date = Today
       const dateInput = document.getElementById("dateInput");
-      if (dateInput) {
-        const today = new Date().toISOString().split("T")[0];
-        dateInput.setAttribute("min", today);
-      }
+      dateInput.min = new Date().toISOString().split("T")[0];
 
-      /* 3. Detect Selected Package from Query, Hash, OR Memory */
-      const params = new URLSearchParams(window.location.search);
-      const urlPkg = params.get("package");
-      const hashPkg = window.location.hash ? decodeURIComponent(window.location.hash.substring(1)) : null;
-      const savedPkg = localStorage.getItem("puruliaSelectedPackage");
-
-      let selectedPkg = (urlPkg || hashPkg || savedPkg || "Ajodhya Hills Complete Circuit Tour").trim();
-
-      // Save latest valid package
-      localStorage.setItem("puruliaSelectedPackage", selectedPkg);
-
-      const pkgInfo = PACKAGES_MAP[selectedPkg] || { price: 6499, unit: "person", duration: "3D / 2N" };
-
-      // Update UI Elements
-      const packageInput = document.getElementById("packageInput");
+      // 3. Elements
+      const packageSelect = document.getElementById("packageSelect");
+      const personsInput = document.getElementById("personsInput");
       const summaryPackageName = document.getElementById("summaryPackageName");
       const summaryDuration = document.getElementById("summaryDuration");
       const summaryBasePrice = document.getElementById("summaryBasePrice");
       const summaryTravelers = document.getElementById("summaryTravelers");
       const summaryTotalPrice = document.getElementById("summaryTotalPrice");
-      const personsInput = document.getElementById("personsInput");
 
-      packageInput.value = selectedPkg;
-      summaryPackageName.textContent = selectedPkg;
-      summaryDuration.textContent = pkgInfo.duration;
+      // Detect package from URL (?package=...) or localStorage
+      const params = new URLSearchParams(window.location.search);
+      const urlPkg = params.get("package");
+      const savedPkg = localStorage.getItem("puruliaSelectedPackage");
+      const initialPkg = (urlPkg || savedPkg || "").trim();
 
-      function updatePriceCalculation() {
-        const count = Math.max(1, Number(personsInput.value) || 1);
+      if (initialPkg && PACKAGES_MAP[initialPkg]) {
+        packageSelect.value = initialPkg;
+      }
+
+      // Live Summary & Price Updater
+      function updateSummary() {
+        const selectedPkg = packageSelect.value;
+        const pkgInfo = PACKAGES_MAP[selectedPkg] || { price: 6499, unit: "person", duration: "3D / 2N" };
+        const count = Math.max(1, parseInt(personsInput.value, 10) || 1);
+
+        localStorage.setItem("puruliaSelectedPackage", selectedPkg);
+        summaryPackageName.textContent = selectedPkg;
+        summaryDuration.textContent = pkgInfo.duration;
         summaryTravelers.textContent = `${count} ${count === 1 ? "Person" : "Persons"}`;
 
         if (pkgInfo.price === 0) {
@@ -386,70 +446,82 @@
           summaryTotalPrice.textContent = "Price on Request";
         } else if (pkgInfo.unit === "couple") {
           summaryBasePrice.textContent = `₹${pkgInfo.price.toLocaleString("en-IN")} / couple`;
-          const couplesCount = Math.ceil(count / 2);
-          const total = couplesCount * pkgInfo.price;
-          summaryTotalPrice.textContent = `₹${total.toLocaleString("en-IN")}`;
+          const couples = Math.ceil(count / 2);
+          summaryTotalPrice.textContent = `₹${(couples * pkgInfo.price).toLocaleString("en-IN")}`;
         } else {
           summaryBasePrice.textContent = `₹${pkgInfo.price.toLocaleString("en-IN")} / person`;
-          const total = count * pkgInfo.price;
-          summaryTotalPrice.textContent = `₹${total.toLocaleString("en-IN")}`;
+          summaryTotalPrice.textContent = `₹${(count * pkgInfo.price).toLocaleString("en-IN")}`;
         }
       }
 
-      personsInput.addEventListener("input", updatePriceCalculation);
-      updatePriceCalculation();
-    });
+      packageSelect.addEventListener("change", updateSummary);
+      personsInput.addEventListener("input", updateSummary);
+      updateSummary();
 
-    /* 4. Submit Form to Backend */
-    document.getElementById("enquiryForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      const form = e.target;
+      // 4. Form Submission to Google Sheet + Email Confirmation
+      const bookingForm = document.getElementById("bookingForm");
       const submitBtn = document.getElementById("submitBtn");
-      const originalBtnHTML = submitBtn.innerHTML;
+      const successModal = document.getElementById("successModal");
+      const modalSummaryText = document.getElementById("modalSummaryText");
+      const modalWhatsappLink = document.getElementById("modalWhatsappLink");
+      const closeModalBtn = document.getElementById("closeModalBtn");
 
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin mr-2"></i> Processing...`;
+      bookingForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-      const data = {
-        name: form.name.value.trim(),
-        phone: form.phone.value.trim(),
-        email: form.email.value.trim(),
-        tourPackage: form.package.value,
-        travelDate: form.date.value,
-        travelers: Number(form.persons.value),
-        pickup: form.pickup.value.trim(),
-        message: form.message.value.trim()
-      };
+        const originalHTML = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> <span>Confirming Booking...</span>`;
 
-      try {
-        const res = await fetch(
-          "https://purulia-backend-1.onrender.com/api/enquiry",
-          {
+        const payload = {
+          tourPackage: packageSelect.value,
+          name: document.getElementById("customerName").value.trim(),
+          phone: document.getElementById("customerPhone").value.trim(),
+          email: document.getElementById("customerEmail").value.trim(),
+          travelers: Number(personsInput.value),
+          travelDate: dateInput.value,
+          estimatedTotal: summaryTotalPrice.textContent.trim(),
+          pickup: document.getElementById("pickupInput").value.trim(),
+          message: document.getElementById("messageInput").value.trim()
+        };
+
+        try {
+          await fetch(GOOGLE_SHEET_URL, {
             method: "POST",
+            mode: "no-cors",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data)
-          }
-        );
+            body: JSON.stringify(payload)
+          });
 
-        const result = await res.json();
+          // Populate Success Modal
+          modalSummaryText.innerHTML = `Thank you, <strong>${payload.name}</strong>! Your request for <strong>${payload.tourPackage}</strong> (${payload.travelDate}) has been saved. A confirmation receipt has been sent to <strong>${payload.email}</strong>.`;
 
-        if (res.ok) {
-          alert(`Thank you ${data.name}! Your booking request for "${data.tourPackage}" has been submitted successfully. ✅`);
-          const currentPkg = form.package.value;
-          form.reset();
-          form.package.value = currentPkg;
-          document.getElementById("personsInput").value = 2;
-          document.getElementById("personsInput").dispatchEvent(new Event("input"));
-        } else {
-          alert(result.error || "Something went wrong! Please try again.");
+          const waText = encodeURIComponent(
+            `Namaskar Purulia Darshan! I just submitted a tour booking:\n• Name: ${payload.name}\n• Package: ${payload.tourPackage}\n• Date: ${payload.travelDate}\n• Travelers: ${payload.travelers}\n• Total: ${payload.estimatedTotal}`
+          );
+          modalWhatsappLink.href = `https://wa.me/917076111493?text=${waText}`;
+
+          successModal.classList.remove("hidden");
+          successModal.classList.add("flex");
+
+          const currentPkg = packageSelect.value;
+          bookingForm.reset();
+          packageSelect.value = currentPkg;
+          personsInput.value = 2;
+          updateSummary();
+
+        } catch (error) {
+          alert("Network issue! Please check your internet connection or message us directly on WhatsApp.");
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalHTML;
         }
-      } catch (err) {
-        alert("Server error. Please check your connection or message us on WhatsApp.");
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnHTML;
-      }
+      });
+
+      closeModalBtn.addEventListener("click", () => {
+        successModal.classList.add("hidden");
+        successModal.classList.remove("flex");
+      });
     });
   </script>
 
